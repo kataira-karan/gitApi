@@ -7,6 +7,8 @@ import { useHistory, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from   'axios';
+import { gsap } from "gsap";
+import { SiTailwindcss, SiVitest } from "react-icons/si";
 
 const Home = () => {
 
@@ -28,24 +30,60 @@ const Home = () => {
 
   }
 
-  useEffect(() => {
+  const showLearning = () =>{
+      gsap.fromTo(".learnings" , { x : "100%" , stagger : 0.5 } , { x : "0%" , duration:1 , }   )
+      
+  }
+
+  useEffect(() => { 
     getUserData();
+
+    showLearning()
 
   }, []);
 
-  return    <div className=" w-full  flex flex-col pb-24  items-center justify-center  text-3px bg-primaryBlack ">
+  return   <div className="w-full relative flex flex-col pb-24  items-center justify-center  text-3px bg-primaryBlack pt-24     ">
    {/* display incline property restricts hights and width. It just wraps the */}
+
+
+      <div className=" absolute right-0 top-8"> 
+
+        <div className="learnings p-4 w-64 bg-gray-300 border-l-8 border-black border-b-4  font-bold " >
+            Learning
+        </div>    
+
+        <div >
+              <ul >
+                  <li className=" learnings p-4  right-0 bg-gray-300 border-l-8 border-black ">
+                     <a className="flex items-center" href="https://tailwindcss.com/"> 
+                       <span className="text-blue-500 mr-4"> <SiTailwindcss></SiTailwindcss>  </span> 
+                       <span>TailWind CSS</span>
+                     </a>
+                  </li>
+                  <li className="flex items-center learnings p-4  right-0 bg-gray-300 border-l-8 border-black "> 
+                    <a className="flex items-center" href="https://vitejs.dev/">   
+                      <span className="text-blue-500 mr-4"> <SiVitest></SiVitest>  </span> 
+                      <span>Vite</span> 
+                    </a>
+                  </li>
+
+              </ul>
+        </div>    
+
+     
+      </div>
+
 
       {
         userData  ? 
         <>
       <Card  userInfo={{ name:userData.name , userName : userData.login , avatar:userData.avatar_url , bio:userData.bio , company : userData.company , location : userData.location , followers : userData.followers , following : userData.following , public_repos : userData.public_repos , gitUrl : userData.html_url }} ></Card>         
       <div className="flex flex-col flex-wrap  mt-8 ">
-      <div className="flex flex-row  items-center text-white font-bold text-2xl">
+      <div className="flex flex-row  items-center text-white font-bold text-2xl mb-4">
         <span className="pr-4">   <GoRepo></GoRepo>  </span>
         <span>   Repositories </span> 
         <span>
-        </span>
+        </span> 
       </div>
   
   <div className="grid grid-col-1  sm:grid-col-2  md:grid-cols-2 lg:grid-cols-3  justify-start">
@@ -56,10 +94,7 @@ const Home = () => {
       
     }
   
-
   </div>
-    
- 
   </div>
         </> 
         :

@@ -9,7 +9,7 @@ const Card = (props) => {
 
   return (
     <div className='flex flex-col justify-center items-center w-96  bg-gray text-white rounded-lg overflow-hidden shadow-md '>
-        <img  className='rounded-full shadow-sm m-2 h-40 w-40 sm:48 object-cover ' src={avatar}></img>
+        <img  className='rounded-full shadow-sm m-2 h-40 w-40 sm:48 object-cover border-4 p-2 '   src={avatar}></img>
         
         <div className='flex flex-col justify-center items-center'>
         <span className=' font-bold my-2 text-3xl tracking-wider'>
@@ -22,19 +22,27 @@ const Card = (props) => {
         </a>    
         </span>
        
-        <span className='flex flex-row items-center justify-center text-white my-2 '>
-          <div className='flex items-center mr-8' > 
-            <span className='mr-4' >
-              <BsPersonWorkspace></BsPersonWorkspace>
-            </span> 
-            <span className='text-sm font-bold'> {company} </span>   
-          </div>  
-          <div  className='flex items-center mr-8  '> 
+        <span className='flex flex-row items-center justify-center text-white my-2 '> 
+
+          {
+             company ?  <div className='flex items-center mr-8' > 
+             <span className='mr-4' >
+               <BsPersonWorkspace></BsPersonWorkspace>
+             </span> 
+             <span className='text-sm font-bold'> {company} </span>   
+           </div>   :  ""
+          }
+
+          { 
+            location ?   <div  className='flex items-center mr-8  '> 
             <span className='mr-2' >
             <GoLocation></GoLocation>
             </span> 
             <span> {location}  </span>   
-          </div>  
+          </div>   : ''
+          }
+              
+         
           {/* <div  className='flex items-center '> 
             <span className='mr-2'  >
             <GoCalendar></GoCalendar>
