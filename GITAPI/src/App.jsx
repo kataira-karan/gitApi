@@ -21,7 +21,7 @@ function App() {
         <Route exact   path="/">
           <LandingPage></LandingPage>
         </Route>
-        <Route exact path="/user">
+        <Route exact path="/:userName">
            <div className="App w-screen bg-gray-500 flex flex-col justify-center items-center">
         <Home></Home>
          </div>
