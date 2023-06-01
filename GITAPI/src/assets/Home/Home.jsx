@@ -46,26 +46,31 @@ const Home = () => {
    {/* display incline property restricts hights and width. It just wraps the */}
 
 
-      <div className=" absolute right-0 top-8"> 
+      <div className="absolute top-0 lg:right-0 lg:w-64 w-screen "> 
 
-        <div className="learnings p-4 w-64 bg-gray-300 border-l-8 border-black border-b-4  font-bold " >
+        <div className=" learnings p-4 text-center bg-gray-300 border-l-8 border-black border-b-4  font-bold " >
             Learning
         </div>    
 
         <div >
               <ul >
-                  <li className=" learnings p-4  right-0 bg-gray-300 border-l-8 border-black ">
-                     <a className="flex items-center" href="https://tailwindcss.com/"> 
-                       <span className="text-blue-500 mr-4"> <SiTailwindcss></SiTailwindcss>  </span> 
+                  <li className=" learnings p-4   bg-gray-300 border-l-8 border-black ">
+                     <a className=" flex items-center justify-center lg:justify-start" href="https://tailwindcss.com/"> 
+                       <span className="text-blue-500 mr-4">
+                         <SiTailwindcss></SiTailwindcss>
+                        </span> 
                        <span>TailWind CSS</span>
                      </a>
                   </li>
-                  <li className="flex items-center learnings p-4  right-0 bg-gray-300 border-l-8 border-black "> 
-                    <a className="flex items-center" href="https://vitejs.dev/">   
-                      <span className="text-blue-500 mr-4"> <SiVitest></SiVitest>  </span> 
-                      <span>Vite</span> 
-                    </a>
+                  <li className=" learnings p-4   bg-gray-300 border-l-8 border-black ">
+                     <a className=" flex items-center justify-center lg:justify-start" href="https://vitejs.dev/"> 
+                       <span className="text-blue-500 mr-4">
+                       <SiVitest></SiVitest>  
+                        </span> 
+                       <span>Vite</span>
+                     </a>
                   </li>
+               
 
               </ul>
         </div>    

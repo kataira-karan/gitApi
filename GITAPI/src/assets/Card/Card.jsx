@@ -8,7 +8,7 @@ const Card = (props) => {
   const {name , userName ,avatar , bio , following , followers , public_repos , location , company ,gitUrl } = props.userInfo;
 
   return (
-    <div className='flex flex-col justify-center items-center w-96  bg-gray text-white rounded-lg overflow-hidden shadow-md '>
+    <div className='mt-32 lg:mt-3 flex flex-col justify-center items-center w-96  bg-gray text-white rounded-lg overflow-hidden shadow-md '>
         <img  className='rounded-full shadow-sm m-2 h-40 w-40 sm:48 object-cover border-4 p-2 '   src={avatar}></img>
         
         <div className='flex flex-col justify-center items-center'>
